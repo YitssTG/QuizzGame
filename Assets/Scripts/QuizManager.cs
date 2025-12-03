@@ -16,11 +16,17 @@ public class QuizManager : MonoBehaviour
 
     void Start()
     {
-        // Agrega las preguntas aquí:
-        preguntas.AddNode(new Pregunta("El cielo es azul.", true));
-        preguntas.AddNode(new Pregunta("Los gatos pueden volar.", false));
-        preguntas.AddNode(new Pregunta("El agua hierve a 100 grados Celsius.", true));
-        preguntas.AddNode(new Pregunta("El sol gira alrededor de la Tierra.", false));
+        // Preguntas de cultura general
+        preguntas.AddNode(new Pregunta("La Gran Muralla China es visible desde el espacio.", false));
+        preguntas.AddNode(new Pregunta("El océano más grande del mundo es el Pacífico.", true));
+        preguntas.AddNode(new Pregunta("La Torre Eiffel está en Italia.", false));
+        preguntas.AddNode(new Pregunta("El ser humano tiene 206 huesos en el cuerpo.", true));
+        preguntas.AddNode(new Pregunta("El café se originó en África.", true));
+        preguntas.AddNode(new Pregunta("La capital de Australia es Sídney.", false)); // Es Canberra
+        preguntas.AddNode(new Pregunta("Los murciélagos son mamíferos.", true));
+        preguntas.AddNode(new Pregunta("El río Nilo es el más largo del mundo.", true));
+        preguntas.AddNode(new Pregunta("El planeta más grande del sistema solar es Júpiter.", true));
+        preguntas.AddNode(new Pregunta("La luz tarda 1 segundo en llegar de la Luna a la Tierra.", false)); // Tarda ~1.3 segundos
 
         current = preguntas.Head;
         ActualizarPregunta();
@@ -29,7 +35,7 @@ public class QuizManager : MonoBehaviour
         btnFalso.onClick.AddListener(() => Responder(false));
         btnAnterior.onClick.AddListener(() => Retroceder());
 
-        btnAnterior.interactable = false; // Deshabilitamos retroceso al inicio
+        btnAnterior.interactable = false;
         feedbackText.text = "";
     }
 
